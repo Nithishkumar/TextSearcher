@@ -30,10 +30,8 @@ public class TextSearchApplication {
             Map<String, Set<String>> result = textSearchService.search(url,inputStrings,isCaseSensitive);
             result.forEach((key,value)->System.out.println(key +"-->"+value));
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | InterruptedException e) {
+            System.out.println(e.getMessage());
         }
 
     }
